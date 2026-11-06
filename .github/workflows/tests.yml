@@ -1,0 +1,31 @@
+name: tests
+
+on:
+  push:
+    paths:
+      - 'DE-Customer360/**'
+      - '.github/workflows/tests.yml'
+  pull_request:
+    paths:
+      - 'DE-Customer360/**'
+      - '.github/workflows/tests.yml'
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: DE-Customer360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: DE-Customer360/requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run pytest
+        env:
+          PYTHONPATH: .
+        run: python -m pytest -q

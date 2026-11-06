@@ -11,8 +11,10 @@ Unified customer pipeline for Akasa Air Round 2 / DE-Customer 360. It ingests CR
 - **Creative/recruiter-efficient UI**:
   - **Mission Control**: staged pipeline status, timing, source counts
   - **Data Quality Cockpit**: DQ score, issue breakdown, drill-down bad records
+  - **DQ Resolution Workflow**: triage issues as `Open/Reviewed/Fixed`, add reviewer comments, export resolution report
   - **Customer 360 Explorer**: searchable table, profile card, activity timeline
-  - **Lineage & Exports**: schema/source map and run artifact downloads
+  - **Data Operations**: edit/flag/delete records in a working dataset, add notes, download updated CSV/JSON/audit (session-safe demo on Streamlit Cloud)
+  - **Insights Lab & Exports**: revenue/segments/regional/support analytics, lineage, and run artifact downloads
 - **Config-driven**: `config.json`
 - **Logging**: `logs/pipeline.log`
 - **Tests**: `pytest` coverage for ingestion, standardization, quality, outputs

@@ -57,19 +57,23 @@ Produces:
 ### 8. Streamlit dashboard (`app.py`) — interactive/creative UI
 Tabs:
 - **Overview:** KPI cards, segment mix donut (Gold/Silver/Bronze actual counts), pipeline stage timing, lifetime value distribution histogram.
-- **Data Quality Cockpit:** DQ score gauge, issue breakdown, filterable drill-down of bad records, raw report JSON.
-- **Customer 360 Explorer:** search, segment/city filters, `>5 tickets` filter, profile metrics, customer activity timeline.
+- **Data Quality Cockpit:** DQ score gauge, issue breakdown, filterable drill-down of bad records, raw report.
+- **DQ Resolution Workflow (add-on):** triage detected issues as `Open/Reviewed/Fixed`, add reviewer comments, filter/search issues, view resolution status chart, and export `dq_resolution_report.csv/json`. On Streamlit Cloud, export preserves workflow state for the demo.
+- **Customer 360 Explorer:** search, segment/city filters, `>5 tickets` filter, profile metrics, activity timeline.
+- **Data Operations (add-on):** operate on a session working copy of unified data — search/filter, edit fields, mark rows `Keep/Review/Delete`, remove deleted rows, reset to pipeline output, and export working/active datasets plus `data_operations_audit.json`. Source files are never modified; on Streamlit Cloud, downloads are the persistence mechanism.
 - **Insights Lab:** Top 10 revenue chart/table, segment revenue contribution, revenue/customer count by city, support-vs-revenue scatter, `>5 tickets` risk table.
 - **Lineage & Exports:** schema/source lineage and download buttons for all run artifacts/log.
 
-Includes **Run / Refresh Pipeline** control and cache refresh to avoid stale analytics.
+Includes **Run / Refresh Pipeline** control and cache/session refresh to avoid stale analytics.
 
-### 9. Tests (`tests/test_pipeline.py`)
+### 9. Tests + CI (`tests/test_pipeline.py`, `.github/workflows/tests.yml`)
 Pytest coverage for:
 - Multi-source ingestion
 - Schema standardization (`cust_id/customerId` mapping, support field rename)
 - Quality-check detection on provided data
 - End-to-end pipeline output + SQLite persistence
+
+GitHub Actions workflow (`.github/workflows/tests.yml`) runs `pytest` on pushes/PRs affecting `DE-Customer360/**` using Python 3.11 with `PYTHONPATH=.`.
 
 ### 10. Deployment/packaging
 - `requirements.txt` — `streamlit`, `pandas`, `plotly`, `pytest`.
@@ -105,3 +109,9 @@ Docker:
 cd DE-Customer360
 docker compose up --build
 ```
+
+## Notes
+- I could not view user-attached screenshot images in this environment; dashboard/data issues reported were addressed by validating actual source/output data and fixing stale-cache/visualization behavior.
+- **Data Operations** and **DQ Resolution** are demo-grade interactive workflows: they work in-session and provide exports. Durable persistence on Streamlit Cloud would require an external database (e.g., Supabase/Postgres).
+- Docker build was not executed in this environment, but Docker packaging files were created and the Python/Streamlit app was verified locally via compile/tests/smoke run.
+- For public recruiter sharing, deploy via Streamlit Community Cloud from the GitHub repo; GitHub Actions will run pytest on pushes/PRs.
