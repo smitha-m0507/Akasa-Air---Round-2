@@ -1,0 +1,56 @@
+{
+  "timestamp_utc": "2026-11-06T08:34:51.218084+00:00",
+  "source_counts": {
+    "crm": 501,
+    "orders": 500,
+    "support": 500
+  },
+  "report": {
+    "total_records": 1501,
+    "duplicates": 1,
+    "invalid_emails": 3,
+    "missing_fields": 0,
+    "negative_revenue": 1,
+    "invalid_customer_ids": 1,
+    "orphan_order_ids": 0,
+    "orphan_support_ids": 0,
+    "successful_records": 500
+  },
+  "steps": [
+    {
+      "step": "Ingest sources",
+      "status": "success",
+      "seconds": 0.049,
+      "detail": "Loaded JSON, CSV, XML"
+    },
+    {
+      "step": "Standardize schemas",
+      "status": "success",
+      "seconds": 0.117,
+      "detail": "crm:501, orders:500, support:500"
+    },
+    {
+      "step": "Run data quality checks",
+      "status": "success",
+      "seconds": 0.085,
+      "detail": "Generated DQ report and issue samples"
+    },
+    {
+      "step": "Merge Customer 360",
+      "status": "success",
+      "seconds": 0.053,
+      "detail": "500 unified records"
+    },
+    {
+      "step": "Generate insights",
+      "status": "success",
+      "seconds": 0.026,
+      "detail": "Top 10, segments, support risk, regional"
+    }
+  ],
+  "outputs": [
+    "C:/Users/Admin/OneDrive/Desktop/Akasa Air-Round 2/DE-Customer360/data/output/customer_360.json",
+    "C:/Users/Admin/OneDrive/Desktop/Akasa Air-Round 2/DE-Customer360/data/output/customer_360.csv",
+    "C:/Users/Admin/OneDrive/Desktop/Akasa Air-Round 2/DE-Customer360/data/output/data_quality_report.json"
+  ]
+}

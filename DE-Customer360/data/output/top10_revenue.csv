@@ -1,0 +1,11 @@
+customer_id,name,city,lifetime_value,total_orders,segment
+C0042,Arjun Singh 42,Mumbai,249919,18.0,Gold
+C0259,Rahul Verma 259,Mumbai,249763,18.0,Gold
+C0269,Priya Nair 269,Hyderabad,249586,9.0,Gold
+C0172,Karan Mehta 172,Hyderabad,247202,27.0,Gold
+C0286,Priya Nair 286,Mumbai,246558,30.0,Gold
+C0288,Priya Nair 288,Hyderabad,246076,30.0,Gold
+C0444,Rahul Verma 444,Mumbai,245660,4.0,Gold
+C0001,Priya Nair 1,Mumbai,245631,12.0,Gold
+C0405,Neha Gupta 405,Hyderabad,244894,13.0,Gold
+C0250,Ananya Das 250,Chennai,244107,15.0,Gold

@@ -1,0 +1,7 @@
+customer_id,name,email,city,issue_reason,issue_source,total_orders,lifetime_value,support_tickets
+C0105,Vikram Jain 105,user105@example.com,Hyderabad,Duplicate CRM customer_id,crm,,,
+C0125,Rahul Verma 125,user125example.com,Mumbai,Invalid email format,crm,,,
+C0250,Ananya Das 250,user250example.com,Chennai,Invalid email format,crm,,,
+C0375,Neha Gupta 375,user375example.com,Chennai,Invalid email format,crm,,,
+C0420,,,,Negative revenue/lifetime_value,orders,11.0,-5000.0,
+,,,,Invalid customer_id,support,,,8.0

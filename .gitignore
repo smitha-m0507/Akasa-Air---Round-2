@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+DE-Customer360/.venv/
+DE-Customer360/__pycache__/
+DE-Customer360/**/__pycache__/
+DE-Customer360/logs/*.log
+DE-Customer360/data/output/*.db
+.kilo/
+*.tmp
+*.env

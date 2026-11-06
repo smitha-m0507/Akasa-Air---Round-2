@@ -1,0 +1,19 @@
+{
+  "input_sources": {
+    "crm": "crm_customers.json",
+    "orders": "orders.csv",
+    "support": "support_tickets.xml"
+  },
+  "output_dir": "data/output",
+  "db_path": "data/output/customer360.db",
+  "log_path": "logs/pipeline.log",
+  "required_fields": ["customer_id", "name", "email"],
+  "segmentation": {
+    "gold_min": 100001,
+    "silver_min": 50000,
+    "silver_max": 100000
+  },
+  "quality": {
+    "high_support_tickets": 5
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "total_records": 1501,
+  "duplicates": 1,
+  "invalid_emails": 3,
+  "missing_fields": 0,
+  "negative_revenue": 1,
+  "invalid_customer_ids": 1,
+  "orphan_order_ids": 0,
+  "orphan_support_ids": 0,
+  "successful_records": 500
+}

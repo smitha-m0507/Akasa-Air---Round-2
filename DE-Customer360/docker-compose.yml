@@ -1,0 +1,10 @@
+services:
+  customer360:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data/output:/app/data/output
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
